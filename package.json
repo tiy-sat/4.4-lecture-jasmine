@@ -1,0 +1,20 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "boilerplate for FEE spring class",
+  "scripts": {
+    "build": "browserify lib/main.js -o js/bundle.js",
+    "watch-sass": "sass --watch sass/main.sass:styles/main.css",
+    "watch-js": "watchify lib/main.js -o js/bundle.js -v",
+    "watch": "npm run watch-sass & npm run watch-js"
+  },
+  "dependencies": {
+    "jasmine": "^2.4.1",
+    "jquery": "^2.2.3"
+  },
+  "devDependencies": {
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine-html-reporter": "^0.2.0"
+  }
+}

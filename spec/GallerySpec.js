@@ -3,7 +3,9 @@
 describe("Gallery", function(){
   // Pull in required files
   var Gallery = require("../lib/gallery.js"),
-      Modal = require("../lib/modal.js")
+      Modal = require("../lib/modal.js"),
+      jsdom = require("jsdom")
+
   ;
   // Defining empty var to reference inside
   // of children scope functions
@@ -16,6 +18,9 @@ describe("Gallery", function(){
     // before each it() block
     modal = new Modal();
     gallery = new Gallery(modal);
+    document = jsdom.jsdom('<body></body>');
+    window = document.defaultView;
+    $ = require('jquery');
   });
 
   it("should open modal when thumbnail is clicked", function(){
